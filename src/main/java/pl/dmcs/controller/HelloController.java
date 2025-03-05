@@ -20,6 +20,7 @@ public class HelloController {
 
 
         model.addAttribute("serverTime", formattedDate);
+        model.addAttribute("message", "Polish chars encoding: ółłŻćźżć√ąąąęęęęęóó");
 
         return "hello";
     }

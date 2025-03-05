@@ -11,6 +11,8 @@
     <a href="/appUsers">App users page</a>
     <br />
     ${serverTime}
+    <br />
+    ${message}
 
 </body>
 </html>
