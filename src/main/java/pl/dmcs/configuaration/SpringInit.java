@@ -7,7 +7,9 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 @Configuration
 public class SpringInit extends AbstractAnnotationConfigDispatcherServletInitializer {
-    protected Class<?>[] getRootConfigClasses()     { return new Class[]{SpringConfiguration.class}; }
+    protected Class<?>[] getRootConfigClasses()     {
+        return new Class[]{SpringConfiguration.class, HibernatePersistenceConfiguration.class};
+    }
     protected Class<?>[] getServletConfigClasses()  { return new Class[0]; }
     protected String[] getServletMappings()         { return new String[] { "/" }; }
 
@@ -16,6 +18,6 @@ public class SpringInit extends AbstractAnnotationConfigDispatcherServletInitial
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
-        return new Filter[]{characterEncodingFilter};
+        return new Filter[] { characterEncodingFilter };
     }
 }
