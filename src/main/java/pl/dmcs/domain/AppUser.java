@@ -25,7 +25,6 @@ public class AppUser {
     @NotNull
     private String email;
 
-    @Size(min = 9, max = 13)
     private String telephone;
 
     public long getId() { return id; }

@@ -13,23 +13,23 @@ public class Address {
     long id;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 100)
     private String country;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 100)
     private String state;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 100)
     private String zipcode;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 100)
     private String city;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 100)
     private String street;
 
     public long getId() { return id; }

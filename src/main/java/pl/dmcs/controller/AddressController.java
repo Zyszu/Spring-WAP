@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.RedirectView;
 import pl.dmcs.domain.Address;
 import pl.dmcs.service.AddressService;
+import pl.dmcs.validator.AddressValidator;
 
 import java.io.Console;
 
 @Controller
 public class AddressController {
+
+    private AddressValidator addressValidator = new AddressValidator();
 
     private AddressService addressService;
     @Autowired
@@ -50,6 +53,7 @@ public class AddressController {
                 + ", Street: " + address.getStreet()
         );
 
+        addressValidator.validate(address, result);
 
         if(!result.hasErrors()) {
             if (address.getId() == 0) {
