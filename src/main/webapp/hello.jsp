@@ -60,6 +60,15 @@
 </head>
 <body>
 <div class="container">
+
+    <header class="navbar">
+        <div class="logo">Welcome Page</div>
+        <div class="language">
+            <a href="?lang=en">EN</a> | <a href="?lang=es">ES</a> | <a href="?lang=pl">PL</a>
+        </div>
+    </header>
+
+
     <h3>Hello World to Me!</h3>
 
     <!-- Link to App Users Page -->

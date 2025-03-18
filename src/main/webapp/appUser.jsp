@@ -154,6 +154,18 @@
             background-color: #444; /* Darker gray on hover */
         }
 
+        .btn-primary {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: #bb86fc; /* Light purple for buttons */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #9a67ea; /* Darker purple on hover */
+        }
+
         /* MOBILE RESPONSIVENESS */
         @media screen and (max-width: 768px) {
             .container {
@@ -177,6 +189,11 @@
     <div class="logo">App User Management</div>
     <div class="language">
         <a href="?lang=en">EN</a> | <a href="?lang=es">ES</a> | <a href="?lang=pl">PL</a>
+    </div>
+    <div>
+        <a href="/" class="btn btn-primary">
+            <spring:message code="label.homepage_btn" />
+        </a>
     </div>
 </header>
 
