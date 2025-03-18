@@ -21,7 +21,6 @@ import java.util.Locale;
 @Configuration
 @EnableWebMvc
 @ComponentScan("pl.dmcs")
-
 public class SpringConfiguration implements WebMvcConfigurer {
 
     @Bean

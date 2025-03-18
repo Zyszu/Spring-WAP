@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.dmcs</groupId>
-    <artifactId>Spring6</artifactId>
+    <artifactId>Spring_01</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,7 +18,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <!-- NIE TYKAC WERSJI -->
             <version>6.0.5</version>
         </dependency>
         <dependency>
@@ -70,17 +69,25 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <!-- NIE TYKAC WERSJI -->
-            <version>6.2.1</version>
+            <version>6.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <!-- NIE TYKAC WERSJI -->
-            <version>6.2.1</version>
+            <version>6.0.2</version>
         </dependency>
     </dependencies>
 
 </project>
+
+
+
+
+
+
+
+
+
+
 
 
