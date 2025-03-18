@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><spring:message code="label.addAppUser" /></title>
+  <title><spring:message code="label.addAddress" /></title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom Dark Theme CSS -->
@@ -174,16 +174,16 @@
 <body>
 
 <header class="navbar">
-  <div class="logo">App User Management</div>
+  <div class="logo">Addresses Management</div>
   <div class="language">
     <a href="?lang=en">EN</a> | <a href="?lang=es">ES</a> | <a href="?lang=pl">PL</a>
   </div>
 </header>
 
 <main class="container">
-  <h1>App User Info</h1>
+  <h1>Address Info</h1>
 
-  <form:form method="post" action="addAppUser" modelAttribute="address" class="user-form">
+  <form:form method="post" action="addAddress" modelAttribute="address" class="user-form">
     <form:hidden path="id" />
 
     <label for="country"><spring:message code="label.country" /></label>
@@ -215,7 +215,7 @@
   </form:form>
 
   <c:if test="${!empty addressList}">
-    <h2>Registered Users</h2>
+    <h2>Registered Addresses</h2>
     <table class="data-table">
       <thead>
       <tr>
@@ -236,7 +236,7 @@
           <td>${address.city}</td>
           <td>${address.street}</td>
           <td>
-            <a href="delete/${address.id}" class="btn delete">
+            <a href="deleteAddress/${address.id}" class="btn delete">
               <spring:message code="label.entity.delete" />
             </a>
             <a href="addresses?addressID=${address.id}" class="btn edit">

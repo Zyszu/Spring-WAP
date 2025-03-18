@@ -65,6 +65,8 @@
     <!-- Link to App Users Page -->
     <a href="/appUsers" class="btn btn-primary">App Users Page</a>
 
+    <a href="/addresses" class="btn btn-primary">Adresses Page</a>
+
     <a href="/exampleOne" class="btn btn-primary">
         <spring:message code="label.example" /> 1
     </a>
