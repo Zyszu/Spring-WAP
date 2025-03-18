@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +72,7 @@
 
 <!-- Funny Meme -->
 <div class="meme-container">
-  <img src="https://i.imgflip.com/7q7x0k.jpg" alt="Funny Meme">
+  <img src="https://s7280.pcdn.co/wp-content/uploads/2019/07/API-Meme.jpg.optimal.jpg" alt="Funny Meme">
 </div>
 
 <!-- Button to Redirect to / Page -->

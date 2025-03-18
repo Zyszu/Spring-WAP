@@ -66,6 +66,6 @@ public class AppUserController {
     @RequestMapping("/delete/{appUserId}")
     public String deleteAppUser(@PathVariable("appUserId") Long appUserId) {
         appUserService.removeAppUser(appUserId);
-        return "redirect:appUsers";
+        return "redirect:/appUsers";
     }
 }

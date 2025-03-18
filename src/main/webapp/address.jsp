@@ -239,7 +239,7 @@
             <a href="deleteAddress/${address.id}" class="btn delete">
               <spring:message code="label.entity.delete" />
             </a>
-            <a href="addresses?addressID=${address.id}" class="btn edit">
+            <a href="addresses?addressId=${address.id}" class="btn edit">
               <spring:message code="label.entity.edit" />
             </a>
           </td>

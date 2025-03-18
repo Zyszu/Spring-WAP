@@ -78,7 +78,7 @@
 
 <!-- Funny Meme -->
 <div class="meme-container">
-  <img src="https://i.imgflip.com/7q7x0k.jpg" alt="Funny Meme">
+  <img src="https://media.makeameme.org/created/im-sorry-e69e9acd6f.jpg" alt="Funny Meme">
 </div>
 
 <!-- Button to Redirect to / Page -->

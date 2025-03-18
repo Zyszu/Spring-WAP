@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.view.RedirectView;
 import pl.dmcs.domain.Address;
 import pl.dmcs.service.AddressService;
+
+import java.io.Console;
 
 @Controller
 public class AddressController {
@@ -24,6 +27,8 @@ public class AddressController {
     @RequestMapping(value = "/addresses")
     public String showAddress(Model model, HttpServletRequest request) {
         long addressId = ServletRequestUtils.getIntParameter(request, "addressId", -1);
+
+        System.out.println("addressId: " + addressId);
 
         if (addressId > 0) {
             model.addAttribute("address", addressService.getAddress(addressId));
@@ -39,10 +44,10 @@ public class AddressController {
     public String addAddress(@Valid @ModelAttribute("address") Address address, BindingResult result, Model model) {
         System.out.println(
                 "Country: " + address.getCountry()
-                        + ", State: " + address.getState()
-                        + ", City: " + address.getCity()
-                        + ", Zip code: " + address.getZipcode()
-                        + ", Street: " + address.getStreet()
+                + ", State: " + address.getState()
+                + ", City: " + address.getCity()
+                + ", Zip code: " + address.getZipcode()
+                + ", Street: " + address.getStreet()
         );
 
 
@@ -63,7 +68,7 @@ public class AddressController {
     @RequestMapping("/deleteAddress/{addressId}")
     public String deleteAddress(@PathVariable("addressId") Long addressId) {
         addressService.removeAddress(addressId);
-        return "redirect:addresses";
+        return "redirect:/addresses";
     }
 
 }
