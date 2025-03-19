@@ -50,6 +50,11 @@ public class AppUserServiceImpl implements AppUserService {
 
     @Transactional
     public AppUser getAppUser(long id) { return appUserRepository.findById(id); }
+
+    @Transactional
+    public AppUser getAppUserByUsername(String username) {
+        return appUserRepository.findByUsername(username);
+    }
 }
 
 

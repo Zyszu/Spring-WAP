@@ -12,4 +12,6 @@ public interface AppUserService {
     public void removeAppUser(long id);
     public AppUser getAppUser(long id);
 
+    public AppUser getAppUserByUsername(String username);
+
 }
