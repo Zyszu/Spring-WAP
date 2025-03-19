@@ -1,0 +1,32 @@
+label.firstName     = Nombre
+label.lastName      = Apellido
+label.email         = Correo electrónico
+label.telephone     = Teléfono
+label.addAppUser    = Agregar usuario de la aplicación
+label.editAppUser   = Cambiar informacion del usuario
+label.example       = Ejemplo
+label.welcome       = Bienvenido
+label.logout        = finalizar la sesión
+label.accesdenied1  = Acceso denegado! 🚫
+label.accesdenied2  = ¡Uy! Parece que intentaste entrar en una zona ultra secreta.
+label.accesdenied3  = No te preocupes, hasta los superhéroes se quedan fuera a veces. 😅
+label.footer        = Hecho con ❤️ por IA (Inteligencia Artificial, no Inteligencia Ajena)
+
+label.country       = País
+label.state         = Comunidad autónoma
+label.zipcode       = Código postal
+label.city          = Ciudad
+label.street        = Calle
+label.addAddress    = Agregar dirección
+label.editAddress   = Editar dirección
+
+label.entity.delete = Borrar
+label.entity.edit   = Editar
+
+label.accesdenied_home_btn = Llévame de vuelta a un lugar seguro (¡por favor, no me dejes aquí!)
+label.homepage_btn         = Regresar a la página de inicio 🏠
+
+error.field.required = El campo es obligatorio
+error.email.invalid  = correo electrónico no válido
+error.telephone.invalid = Número de teléfono inválido (+XX-XXX-XXX-XXX)
+error.zipcode.invalid   = Código postal no válido (XX-XXX)

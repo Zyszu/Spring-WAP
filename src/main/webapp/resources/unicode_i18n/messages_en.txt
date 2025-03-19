@@ -1,0 +1,32 @@
+label.firstName     = Name
+label.lastName      = Surname
+label.email         = Email
+label.telephone     = Phone number
+label.addAppUser    = Add application user
+label.editAppUser   = Edit user
+label.example       = Example
+label.welcome       = Welcome
+label.logout        = Logout
+label.accesdenied1  = Access Denied! 🚫
+label.accesdenied2  = Oops! Looks like you tried to enter a top-secret area.
+label.accesdenied3  = Don't worry, even superheroes get locked out sometimes. 😅
+label.footer        = Made with ❤️ by AI
+
+label.country       = Country
+label.state         = State
+label.zipcode       = Zip code
+label.city          = City
+label.street        = Street
+label.addAddress    = Add address
+label.editAddress   = Edit address
+
+label.entity.delete = Delete
+label.entity.edit   = Edit
+
+label.accesdenied_home_btn = Take Me Back to Safety
+label.homepage_btn         = Go back to home page 🏠
+
+error.field.required    = Field is required
+error.email.invalid     = Invalid email
+error.telephone.invalid = Invalid telephone number (+XX-XXX-XXX-XXX)
+error.zipcode.invalid   = Invalid zip code (XX-XXX)

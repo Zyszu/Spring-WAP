@@ -1,0 +1,32 @@
+label.firstName     = Imię
+label.lastName      = Nazwisko
+label.email         = Email
+label.telephone     = Telefon
+label.addAppUser    = Dodaj użytkownika aplikacji
+label.editAppUser   = Zmień dane użytkownika
+label.example       = Przykład
+label.welcome       = Witaj
+label.logout        = Wyloguj
+label.accesdenied1  = Brak dostępu! 🚫
+label.accesdenied2  = Ajajaj! Wygląda na to, że próbowałeś/próbowałaś otworzyć komnatę tajemnic.
+label.accesdenied3  = Nie przejmuj się, Harry też miał z tym problem 😅
+label.footer        = Stworzone z ❤️ przez AI śćżźąęłóó
+
+label.country       = Kraj
+label.state         = Województwo
+label.zipcode       = Kod pocztowy
+label.city          = Miasto
+label.street        = Ulica
+label.addAddress    = Dodaj adres
+label.editAddress   = Edytuj adres
+
+label.entity.delete = Usuń
+label.entity.edit   = Edytuj
+
+label.accesdenied_home_btn = zabierz mnie stąd
+label.homepage_btn         = Wróć na stronę główną 🏠
+
+error.field.required = To pole jest wymagane
+error.email.invalid  = Nieprawidłowy email
+error.telephone.invalid = Nieprawidłowy numer telefonu (+XX-XXX-XXX-XXX)
+error.zipcode.invalid   = Nieprawidłowy kod pocztowy (XX-XXX)
