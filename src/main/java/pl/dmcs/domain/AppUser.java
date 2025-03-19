@@ -59,13 +59,16 @@ public class AppUser {
     public String getTelephone() { return telephone; }
     public void setTelephone(String telephone) { this.telephone = telephone; }
 
-//    public String getUsername() { return username; }
-//    public void setUsername(String username) { this.username = username; }
-//
-//    public String getPassword() { return password; }
-//    public void setPassword(String password) { this.password = password; }
-//
-//    public boolean isEnabled() { return enabled; }
-//    public void setEnabled(boolean enabled) { this.enabled = enabled; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public boolean isEnabled() { return enabled; }
+    public void setEnabled(boolean enabled) { this.enabled = enabled; }
+
+    public Set<AppUserRole> getAppUserRole() { return appUserRole; }
+    public void setAppUserRole(Set<AppUserRole> appUserRole) { this.appUserRole = appUserRole; }
 
 }
