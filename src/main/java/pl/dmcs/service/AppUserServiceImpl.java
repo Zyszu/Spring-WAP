@@ -1,22 +1,39 @@
 package pl.dmcs.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.dmcs.domain.AppUser;
 import pl.dmcs.repository.AppUserRepository;
+import pl.dmcs.repository.AppUserRoleRepository;
+
 import java.util.List;
 
 @Service
 public class AppUserServiceImpl implements AppUserService {
 
-    private AppUserRepository appUserRepository;
+    private AppUserRepository       appUserRepository;
+    private AppUserRoleRepository   appUserRoleRepository;
+    private PasswordEncoder         passwordEncoder;
 
     @Autowired
-    public AppUserServiceImpl(AppUserRepository appUserRepository) { this.appUserRepository = appUserRepository; }
+    public AppUserServiceImpl(
+            AppUserRepository       appUserRepository,
+            AppUserRoleRepository   appUserRoleRepository,
+            PasswordEncoder         passwordEncoder
+        ) {
+        this.appUserRepository      = appUserRepository;
+        this.appUserRoleRepository  = appUserRoleRepository;
+        this.passwordEncoder        = passwordEncoder;
+    }
 
     @Transactional
-    public void addAppUser(AppUser appUser) { appUserRepository.save(appUser); }
+    public void addAppUser(AppUser appUser) {
+        appUser
+        appUserRepository.save(appUser);
+    }
 
     @Transactional
     public void editAppUser(AppUser appUser) { appUserRepository.save(appUser); }
