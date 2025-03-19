@@ -30,3 +30,9 @@ error.field.required    = Field is required
 error.email.invalid     = Invalid email
 error.telephone.invalid = Invalid telephone number (+XX-XXX-XXX-XXX)
 error.zipcode.invalid   = Invalid zip code (XX-XXX)
+
+label.login             = Login
+label.password          = Password
+label.enabled           = Active
+label.role              = Role
+label.addAppUserRole    = Add user role
