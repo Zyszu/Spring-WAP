@@ -203,6 +203,18 @@
     <form:form method="post" action="addAppUser" modelAttribute="appUser" class="user-form">
         <form:hidden path="id" />
 
+        <label for="username"><spring:message code="label.login" /></label>
+        <form:input path="username" class="input-field" />
+        <form:errors path="username"/>
+
+        <label for="password"><spring:message code="label.password" /></label>
+        <form:input path="password" class="input-field" />
+        <form:errors path="password"/>
+
+        <label for="enabled"><spring:message code="label.enabled" /></label>
+        <form:checkbox id= "enabled" path="enabled" class="input-field" />
+        <form:errors path="enabled"/>
+
         <label for="firstName"><spring:message code="label.firstName" /></label>
         <form:input path="firstName" class="input-field" />
         <form:errors path="firstName"/>
@@ -232,6 +244,9 @@
         <table class="data-table">
             <thead>
             <tr>
+                <th><spring:message code="label.login"/></th>
+                <th><spring:message code="label.password"/></th>
+                <th><spring:message code="label.enabled"/></th>
                 <th><spring:message code="label.firstName"/></th>
                 <th><spring:message code="label.lastName"/></th>
                 <th><spring:message code="label.email"/></th>
@@ -242,6 +257,9 @@
             <tbody>
             <c:forEach items="${appUseList}" var="appUser">
                 <tr>
+                    <td>${appUser.username}</td>
+                    <td>:)</td>
+                    <td>${appUser.enabled}</td>
                     <td>${appUser.firstName}</td>
                     <td>${appUser.lastName}</td>
                     <td>${appUser.email}</td>

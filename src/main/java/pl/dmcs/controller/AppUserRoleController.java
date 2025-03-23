@@ -36,5 +36,4 @@ public class AppUserRoleController {
         return "redirect:/appUsers";
     }
 
-
 }

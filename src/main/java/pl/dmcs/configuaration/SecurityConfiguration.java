@@ -1,20 +1,47 @@
 package pl.dmcs.configuaration;
 
+import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfiguration {
 
+    @Resource(name="myAppUserDetailsService")
+    private UserDetailsService userDetailsService;
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    DaoAuthenticationProvider authProvider(){
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        // for database users
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        // for in-memory users
+        //authProvider.setUserDetailsService(userDetailsService());
+        return authProvider;
+    }
+
+    // for in-memory users
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
@@ -32,15 +59,22 @@ public class SecurityConfiguration {
                 .password("student")
                 .roles("STUDENT")
                 .build();
+
         return new InMemoryUserDetailsManager(user, admin, student);
     }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        http.addFilterBefore(filter, CsrfFilter.class);
+
         http
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/addresses**").hasRole("ADMIN")
-                        .requestMatchers("/appUsers*").hasRole("ADMIN")
+                        .requestMatchers("/appUserRole*").hasRole("ADMIN")
+                        .requestMatchers("/appUsers*").hasAnyRole("ADMIN","USER")
                         .requestMatchers("/exampleOne*").hasAuthority("ROLE_USER")
                         .requestMatchers("/exampleTwo*").hasAnyAuthority("ROLE_STUDENT", "ROLE_ADMIN")
                         .requestMatchers("/exampleThree*").hasRole("STUDENT")
@@ -63,7 +97,7 @@ public class SecurityConfiguration {
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login?logout")
                 )
-                .exceptionHandling(logout -> logout
+                .exceptionHandling(accessDenied -> accessDenied
                         .accessDeniedPage("/accessDenied")
                 )
                 .httpBasic();
@@ -71,16 +105,3 @@ public class SecurityConfiguration {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

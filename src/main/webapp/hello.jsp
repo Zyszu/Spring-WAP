@@ -76,6 +76,9 @@
 
     <a href="/addresses" class="btn btn-primary">Adresses Page</a>
 
+    <a href="/appUserRole" class="btn btn-primary">App user role</a>
+
+
     <a href="/exampleOne" class="btn btn-primary">
         <spring:message code="label.example" /> 1
     </a>
