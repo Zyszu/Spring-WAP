@@ -38,7 +38,7 @@ public class MyAppUserDetailsService implements UserDetailsService {
     // Converts AppUser user to org.springframework.security.core.userdetails.User
     private User buildUserForAuthentication(pl.dmcs.domain.AppUser appUser, List<GrantedAuthority> authorities) {
 
-        return new User(appUser.getUsername(), appUser.getPassword(), appUser.isEnabled(),
+        return new User(appUser.getFirstName(), appUser.getPassword(), appUser.isEnabled(),
                 true, true, true, authorities);
     }
 
