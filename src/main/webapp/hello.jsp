@@ -3,6 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,23 +72,31 @@
 
     <h3>Hello World to Me!</h3>
 
-    <!-- Link to App Users Page -->
-    <a href="/appUsers" class="btn btn-primary">App Users Page</a>
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <!-- Link to App Users Page -->
+        <a href="/appUsers" class="btn btn-primary">App Users Page</a>
+        <a href="/addresses" class="btn btn-primary">Adresses Page</a>
+        <a href="/appUserRole" class="btn btn-primary">App user role</a>
 
-    <a href="/addresses" class="btn btn-primary">Adresses Page</a>
+    </sec:authorize>
 
-    <a href="/exampleOne" class="btn btn-primary">
-        <spring:message code="label.example" /> 1
-    </a>
+    <sec:authorize access="hasRole('ROLE_USER')">
+        <a href="/exampleOne" class="btn btn-primary">
+            <spring:message code="label.example" /> 1
+        </a>
+    </sec:authorize>
 
-    <a href="/exampleTwo" class="btn btn-primary">
-        <spring:message code="label.example" /> 2
-    </a>
+    <sec:authorize access="hasAnyRole('ROLE_STUDENT', 'ROLE_ADMIN')">
+        <a href="/exampleTwo" class="btn btn-primary">
+            <spring:message code="label.example" /> 2
+        </a>
+    </sec:authorize>
 
-    <a href="/exampleThree" class="btn btn-primary">
-        <spring:message code="label.example" /> 3
-    </a>
-
+    <sec:authorize access="hasRole('ROLE_STUDENT')">
+        <a href="/exampleThree" class="btn btn-primary">
+            <spring:message code="label.example" /> 3
+        </a>
+    </sec:authorize>
 
     <!-- Server Time and Message -->
     <div class="message-box">
